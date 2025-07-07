@@ -1,53 +1,66 @@
-# Passport OCR and Metadata Storage Tool
+# Passport OCR Automation with Azure & MySQL
 
-This Python-based tool extracts essential information from scanned **passport images** (JPEG, PNG, PDF) using **Azure Form Recognizer** and stores the extracted metadata in a **MySQL database** and a local **JSON file**. It includes a file dialog interface for user-friendly image selection.
-
----
-
-##  Features
-
--  Extracts key passport details: `FirstName`, `DocumentNumber`, `Nationality`, and `DateOfBirth`.
--  Uses **Azure Cognitive Services – Form Recognizer** (prebuilt ID document model).
--  Stores metadata as:
-  - A row in a *MySQL database*
-  - A `.json` file in the same directory as the image
--  File picker interface using *Tkinter*
--  Auto-creates the database and table if not already present
+This project provides an automated system to extract key information from passport images using **Azure Form Recognizer** and stores the extracted metadata in a **MySQL database**, with optional JSON file output.
 
 ---
 
+## 📌 Features
+
+- Selects a passport image using a GUI file picker (supports `.jpg`, `.jpeg`, `.png`, `.pdf`)
+- Uses **Azure Document Intelligence (prebuilt-idDocument)** to extract:
+  - First Name
+  - Passport Number
+  - Nationality
+  - Date of Birth
+- Saves metadata in:
+  - A **MySQL database** (`passports` table)
+  - An optional **JSON file**
+- Handles PDF and image input types
+- Supports error handling for failed OCR or DB connection
 
 ---
 
-## ⚙️ Requirements
+## 🧰 Tech Stack
 
-- Python 3.7+
-- Azure Cognitive Services Account (Form Recognizer)
-- MySQL Server (local or remote)
+- **Python 3**
+- **Azure Form Recognizer (Document Intelligence)**
+- **MySQL**
+- `mysql-connector-python`
+- `azure-ai-formrecognizer`
+- `tkinter` for file selection
+- `json`, `os`, `datetime` for metadata processing
 
 ---
 
-##  Installation
+## 📦 Installation
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/passport-ocr.git
-   cd passport-ocr
+ 1. Install Required Python Packages
 
-   
+- bash
+pip install azure-ai-formrecognizer mysql-connector-python
+-----------------------------------------------------------------------------------------------
+2. MySQL Server
+Ensure your MySQL server is running and accessible. You’ll need:
 
-## Azure Setup
-Go to Azure Portal
+Host (e.g., localhost)
 
-Create a Form Recognizer resource
+User (e.g., root)
 
-Copy:
+Password
 
-Endpoint
+Database name (e.g., passports_ocr_db)
+-----------------------------------------------------------------------------------------------
+3. Azure Form Recognizer Setup
+Create a Form Recognizer resource from Azure Portal, and get:
 
-Key
+AZURE_ENDPOINT
 
-Enable the prebuilt-idDocument model
+AZURE_KEY
+-----------------------------------------------------------------------------------------------
 
+🛡️ Notes
+Ensure your Azure resource uses the Document Intelligence (Form Recognizer) service with "prebuilt-idDocument" model.
 
+Passwords are stored in plaintext in this demo. For production, always encrypt sensitive information.
 
+Handle file paths, logging, and exception handling properly in extended versions.
