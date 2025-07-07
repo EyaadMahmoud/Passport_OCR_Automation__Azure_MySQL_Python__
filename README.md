@@ -1,4 +1,7 @@
-# Passport OCR Automation with Azure & MySQL
+# 🔐📸 Passport OCR Automation with Azure & MySQL
+Scan, Extract, and Save passport data effortlessly
+
+
 
 This project provides an automated system to extract key information from passport images using **Azure Form Recognizer** and stores the extracted metadata in a **MySQL database**, with optional JSON file output.
 
