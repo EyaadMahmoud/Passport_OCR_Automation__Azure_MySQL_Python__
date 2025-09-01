@@ -37,11 +37,12 @@ This project provides an automated system to extract key information from passpo
 
 ## 📦 Installation
 
-###1. Install Required Python Packages
+1. Install Required Python Packages
 
 pip install azure-ai-formrecognizer mysql-connector-python
 
-###2. MySQL Server
+2. MySQL Server
+
 Ensure your MySQL server is running and accessible. You’ll need:
 
 Host (e.g., localhost)
@@ -49,7 +50,8 @@ User (e.g., root)
 Password
 Database name (e.g., passports_ocr_db)
 
-###3. Azure Form Recognizer Setup
+3. Azure Form Recognizer Setup
+
 Create a Form Recognizer resource from Azure Portal, and get:
 
 AZURE_ENDPOINT
