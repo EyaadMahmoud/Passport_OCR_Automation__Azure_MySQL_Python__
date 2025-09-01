@@ -59,7 +59,8 @@ AZURE_ENDPOINT
 AZURE_KEY
 
 
-🛡️ Notes
+### Notes
+
 Ensure your Azure resource uses the Document Intelligence (Form Recognizer) service with "prebuilt-idDocument" model.
 
 Passwords are stored in plaintext in this demo. For production, always encrypt sensitive information.
